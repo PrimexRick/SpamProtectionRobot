@@ -45,20 +45,20 @@ async def main():
 @spr.on_message(filters.command(["help", "start"]), group=2)
 async def help_command(_, message: Message):
     if message.chat.type != "private":
-        kb = ikb({"Help": f"https://t.me/{BOT_USERNAME}?start=help"})
+        kb = ikb({"Help": f"https://t.me/KyojuroRengokuRobot?start=help"})
         return await message.reply("Pm Me For Help", reply_markup=kb)
     kb = ikb(
         {
             "Help": "bot_commands",
             "Primes": "https://t.me/PrimesDivision",
-            "Add Me To Your Group": f"https://t.me/{BOT_USERNAME}?startgroup=new",
-            "Support Chat (for now)": "https://t.me/WBBSupport",
+            "Add Me To Your Group": f"https://t.me/KyojuroRengokuRobot?startgroup=new",
+            "Support Chat ": "https://t.me/RengokuSupport",
         }
     )
     mention = message.from_user.mention
     await message.reply_photo(
-        "https://hamker.me/logo_3.png",
-        caption=f"Hi {mention}, I'm SpamProtectionRobot,"
+        "https://telegra.ph/file/74bf4e1ad2aa53a08051c.jpg",
+        caption=f"Hi {mention}, I'm Kyojuro Rengoku,"
         + " Choose An Option From Below.",
         reply_markup=kb,
     )
@@ -84,7 +84,7 @@ async def help_parser(name, keyboard=None):
             paginate_modules(0, HELPABLE, "help")
         )
     return (
-        f"Hello {name}, I'm SpamProtectionRobot, I can protect "
+        f"Hello {name}, I'm Kyojuro Rengoku, I can protect "
         + "your group from Spam and NSFW media using "
         + "machine learning. Choose an option from below.",
         keyboard,
@@ -100,7 +100,7 @@ async def help_button(client, query: CallbackQuery):
     create_match = re.match(r"help_create", query.data)
     u = query.from_user.mention
     top_text = (
-        f"Hello {u}, I'm SpamProtectionRobot, I can protect "
+        f"Hello {u}, I'm Kyoujuro Rengoku, I can protect "
         + "your group from Spam and NSFW media using "
         + "machine learning. Choose an option from below."
     )
